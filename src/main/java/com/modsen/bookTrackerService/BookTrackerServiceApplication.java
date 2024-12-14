@@ -1,4 +1,4 @@
-package com.modsen.book_tracker_service;
+package com.modsen.bookTrackerService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

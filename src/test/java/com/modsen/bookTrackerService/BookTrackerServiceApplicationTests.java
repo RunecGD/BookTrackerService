@@ -1,4 +1,4 @@
-package com.modsen.book_tracker_service;
+package com.modsen.bookTrackerService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
