@@ -1,9 +1,9 @@
 package com.modsen.bookTrackerService.controller;
+
 import com.modsen.bookTrackerService.dto.UserDto;
 import com.modsen.bookTrackerService.models.UserTracker;
 import com.modsen.bookTrackerService.service.UserService;
 import com.modsen.bookTrackerService.utils.JwtUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

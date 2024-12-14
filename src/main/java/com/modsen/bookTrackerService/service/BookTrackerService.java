@@ -33,7 +33,8 @@ public class BookTrackerService {
                         bookStatus.getBorrowedAt(),
                         bookStatus.getReturnBy()
                 ))
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()
+                );
     }
 
     public void updateBookStatus(String bookId, String status) {
@@ -51,7 +52,8 @@ public class BookTrackerService {
                 bookStatus.setBorrowedAt(LocalDateTime.now());
                 bookStatus.setReturnBy(LocalDateTime
                         .now()
-                        .plusWeeks(2));
+                        .plusWeeks(2)
+                );
             } else if (BookStatusEnum.AVAILABLE.equals(bookStatusEnum)) {
                 bookStatus.setBorrowedAt(null);
                 bookStatus.setReturnBy(null);
