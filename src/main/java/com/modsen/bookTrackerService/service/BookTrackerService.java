@@ -1,6 +1,7 @@
 package com.modsen.bookTrackerService.service;
 
 import com.modsen.bookTrackerService.dto.BookStatusDto;
+import com.modsen.bookTrackerService.exception.BookNotFoundException;
 import com.modsen.bookTrackerService.models.BookStatus;
 import com.modsen.bookTrackerService.models.BookStatusEnum;
 import com.modsen.bookTrackerService.repository.BookStatusRepository;
@@ -67,5 +68,10 @@ public class BookTrackerService {
         if (bookStatus != null) {
             bookStatusRepository.delete(bookStatus);
         }
+    }
+
+    public BookStatus getStatus(String bookId) {
+        return bookStatusRepository.findStatusByBookId(bookId)
+                .orElseThrow(() -> new BookNotFoundException("Book not found with bookId: " + bookId));
     }
 }

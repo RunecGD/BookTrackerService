@@ -5,6 +5,7 @@ import com.modsen.bookTrackerService.models.BookStatus;
 import com.modsen.bookTrackerService.models.BookStatusEnum;
 import com.modsen.bookTrackerService.service.BookTrackerService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -38,6 +39,12 @@ public class BookTrackerController {
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid status: " + status);
         }
+    }
+
+    @GetMapping("/api/book-status/{bookId}")
+    public ResponseEntity<BookStatusEnum> checkBookStatus(@PathVariable String bookId) {
+        BookStatus status = bookTrackerService.getStatus(bookId);
+        return ResponseEntity.ok(status.getStatus());
     }
 
     @PutMapping("/{bookId}/status/{status}")
