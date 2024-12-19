@@ -17,10 +17,12 @@ import java.io.IOException;
 
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
     private final UserDetailsService userDetailsService;
     private final JwtUtil jwtUtil;
 
-    public JwtAuthenticationFilter(UserDetailsService userDetailsService, JwtUtil jwtUtil) {
+    public JwtAuthenticationFilter(UserDetailsService userDetailsService,
+                                   JwtUtil jwtUtil) {
         this.userDetailsService = userDetailsService;
         this.jwtUtil = jwtUtil;
     }
@@ -35,8 +37,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         final String authorizationHeader = request.getHeader("Authorization");
 
         String username = null;
-        String jwt = null;
-
+        String jwt;
 
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             jwt = authorizationHeader.substring(7);
