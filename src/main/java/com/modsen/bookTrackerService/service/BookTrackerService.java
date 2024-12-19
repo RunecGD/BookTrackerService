@@ -5,7 +5,6 @@ import com.modsen.bookTrackerService.exception.BookNotFoundException;
 import com.modsen.bookTrackerService.models.BookStatus;
 import com.modsen.bookTrackerService.models.BookStatusEnum;
 import com.modsen.bookTrackerService.repository.BookStatusRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -15,8 +14,10 @@ import java.util.stream.Collectors;
 @Service
 public class BookTrackerService {
 
-    @Autowired
-    private BookStatusRepository bookStatusRepository;
+    private final BookStatusRepository bookStatusRepository;
+    public BookTrackerService(BookStatusRepository bookStatusRepository) {
+        this.bookStatusRepository = bookStatusRepository;
+    }
 
     public BookStatus createBookStatus(String bookId) {
         BookStatus bookStatus = new BookStatus();
