@@ -2,8 +2,8 @@ package com.modsen.bookTrackerService.service;
 
 import com.modsen.bookTrackerService.dto.BookStatusDto;
 import com.modsen.bookTrackerService.exception.BookNotFoundException;
-import com.modsen.bookTrackerService.models.BookStatus;
-import com.modsen.bookTrackerService.models.BookStatusEnum;
+import com.modsen.bookTrackerService.model.BookStatus;
+import com.modsen.bookTrackerService.model.BookStatusEnum;
 import com.modsen.bookTrackerService.repository.BookStatusRepository;
 import org.springframework.stereotype.Service;
 
@@ -39,24 +39,17 @@ public class BookTrackerService {
                 );
     }
 
-    public void updateBookStatus(String bookId, String status) {
-        BookStatusEnum bookStatusEnum;
-        try {
-            bookStatusEnum = BookStatusEnum.fromString(status);
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Invalid status: " + status, e);
-        }
-
+    public void updateBookStatus(String bookId, BookStatusEnum status) {
         BookStatus bookStatus = bookStatusRepository.findByBookId(bookId);
         if (bookStatus != null) {
-            bookStatus.setStatus(bookStatusEnum);
-            if (BookStatusEnum.CHECKED_OUT.equals(bookStatusEnum)) {
+            bookStatus.setStatus(status);
+            if (BookStatusEnum.CHECKED_OUT.equals(status)) {
                 bookStatus.setBorrowedAt(LocalDateTime.now());
                 bookStatus.setReturnBy(LocalDateTime
                         .now()
                         .plusWeeks(2)
                 );
-            } else if (BookStatusEnum.AVAILABLE.equals(bookStatusEnum)) {
+            } else if (BookStatusEnum.AVAILABLE.equals(status)) {
                 bookStatus.setBorrowedAt(null);
                 bookStatus.setReturnBy(null);
             }

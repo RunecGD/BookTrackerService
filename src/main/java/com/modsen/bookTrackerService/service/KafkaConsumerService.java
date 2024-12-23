@@ -2,6 +2,7 @@ package com.modsen.bookTrackerService.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.modsen.bookTrackerService.model.BookStatusEnum;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -30,10 +31,10 @@ public class KafkaConsumerService {
                 bookTrackerService.deleteBookStatus(bookId);
             }
             else if("take".equals(action)){
-                bookTrackerService.updateBookStatus(bookId, "CHECKED_OUT");
+                bookTrackerService.updateBookStatus(bookId, BookStatusEnum.CHECKED_OUT);
             }
             else if("return".equals(action)){
-                bookTrackerService.updateBookStatus(bookId, "AVAILABLE");
+                bookTrackerService.updateBookStatus(bookId, BookStatusEnum.AVAILABLE);
 
             }
         } catch (Exception e) {

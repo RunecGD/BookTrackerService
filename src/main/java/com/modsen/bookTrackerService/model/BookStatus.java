@@ -1,4 +1,4 @@
-package com.modsen.bookTrackerService.models;
+package com.modsen.bookTrackerService.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

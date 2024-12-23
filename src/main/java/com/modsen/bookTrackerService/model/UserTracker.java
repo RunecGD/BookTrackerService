@@ -1,4 +1,4 @@
-package com.modsen.bookTrackerService.models;
+package com.modsen.bookTrackerService.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

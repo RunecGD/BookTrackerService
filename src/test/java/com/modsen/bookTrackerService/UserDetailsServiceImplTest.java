@@ -1,6 +1,6 @@
 package com.modsen.bookTrackerService;
 
-import com.modsen.bookTrackerService.models.UserTracker;
+import com.modsen.bookTrackerService.model.UserTracker;
 import com.modsen.bookTrackerService.repository.UserRepository;
 import com.modsen.bookTrackerService.service.UserDetailsServiceImpl;
 import org.junit.jupiter.api.BeforeEach;

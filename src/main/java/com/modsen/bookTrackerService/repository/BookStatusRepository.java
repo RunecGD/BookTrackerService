@@ -1,7 +1,7 @@
 package com.modsen.bookTrackerService.repository;
 
-import com.modsen.bookTrackerService.models.BookStatus;
-import com.modsen.bookTrackerService.models.BookStatusEnum;
+import com.modsen.bookTrackerService.model.BookStatus;
+import com.modsen.bookTrackerService.model.BookStatusEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

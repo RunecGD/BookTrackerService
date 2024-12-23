@@ -1,6 +1,6 @@
 package com.modsen.bookTrackerService.dto;
 
-import com.modsen.bookTrackerService.models.BookStatusEnum;
+import com.modsen.bookTrackerService.model.BookStatusEnum;
 
 import java.time.LocalDateTime;
 

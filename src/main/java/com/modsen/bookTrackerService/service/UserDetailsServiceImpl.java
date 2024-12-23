@@ -1,6 +1,6 @@
 package com.modsen.bookTrackerService.service;
 
-import com.modsen.bookTrackerService.models.UserTracker;
+import com.modsen.bookTrackerService.model.UserTracker;
 import com.modsen.bookTrackerService.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
