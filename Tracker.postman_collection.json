@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "d713f697-f520-4a8a-83ed-621acadb04a5",
+		"name": "Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40118818"
+	},
+	"item": [
+		{
+			"name": "GetAvailableBooks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Lesha2\",\n    \"password\": \"root\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/books/tracker/AVAILABLE",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"books",
+						"tracker",
+						"AVAILABLE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetChecked_outBooks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"Lesha2\",\n    \"password\": \"root\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/books/tracker/CHECKED_OUT",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"books",
+						"tracker",
+						"CHECKED_OUT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStatusBook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/books/tracker/book-status/1555",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"books",
+						"tracker",
+						"book-status",
+						"1555"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAvailableStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/books/tracker/1555/status/AVAILABLE",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"books",
+						"tracker",
+						"1555",
+						"status",
+						"AVAILABLE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCheckedOutStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/books/tracker/1555/status/CHECKED_OUT",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"books",
+						"tracker",
+						"1555",
+						"status",
+						"CHECKED_OUT"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
