@@ -3,20 +3,18 @@ package com.modsen.bookTrackerService.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.modsen.bookTrackerService.model.BookStatusEnum;
+import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 
 @Service
+@RequiredArgsConstructor
 public class KafkaConsumerService {
 
     private final BookTrackerService bookTrackerService;
     private final ObjectMapper objectMapper;
 
-    public KafkaConsumerService(BookTrackerService bookTrackerService, ObjectMapper objectMapper) {
-        this.bookTrackerService = bookTrackerService;
-        this.objectMapper = objectMapper;
-    }
 
     @KafkaListener(topics = "book-status-topic", groupId = "book-tracker-group")
     public void listen(String message) {
