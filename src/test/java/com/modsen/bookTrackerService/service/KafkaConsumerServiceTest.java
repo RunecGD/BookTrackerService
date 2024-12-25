@@ -1,9 +1,7 @@
-package com.modsen.bookTrackerService;
+package com.modsen.bookTrackerService.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.modsen.bookTrackerService.model.BookStatusEnum;
-import com.modsen.bookTrackerService.service.BookTrackerService;
-import com.modsen.bookTrackerService.service.KafkaConsumerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

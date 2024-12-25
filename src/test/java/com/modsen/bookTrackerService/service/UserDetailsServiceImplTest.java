@@ -1,8 +1,7 @@
-package com.modsen.bookTrackerService;
+package com.modsen.bookTrackerService.service;
 
 import com.modsen.bookTrackerService.model.UserTracker;
 import com.modsen.bookTrackerService.repository.UserRepository;
-import com.modsen.bookTrackerService.service.UserDetailsServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

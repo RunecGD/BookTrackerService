@@ -1,11 +1,10 @@
-package com.modsen.bookTrackerService;
+package com.modsen.bookTrackerService.service;
 
 import com.modsen.bookTrackerService.dto.BookStatusDto;
 import com.modsen.bookTrackerService.exception.BookNotFoundException;
 import com.modsen.bookTrackerService.model.BookStatus;
 import com.modsen.bookTrackerService.model.BookStatusEnum;
 import com.modsen.bookTrackerService.repository.BookStatusRepository;
-import com.modsen.bookTrackerService.service.BookTrackerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
